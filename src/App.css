@@ -1,0 +1,165 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin 5s infinite;
+  }
+}
+
+.App-header {
+  background-color: #dfdfdf;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    left: 0px;
+  }
+  to {
+    left: 300px;
+  }
+}
+
+.header1{
+  color:blue;
+}
+
+.error-notification{
+  background-color:rgb(255, 175, 175)
+}
+
+.success-notification{
+  background-color: rgb(159, 255, 159)
+}
+
+.warning-notification{
+  background-color: rgb(255, 255, 152)
+}
+
+/* Modal Customization */
+
+.custom-modal .ant-modal{
+  min-width: 750px;
+  background-color: #F7F7F7;
+  box-shadow: 2px 5px 10px 5px rgba(0,0,0,0.09);
+  padding-bottom: 0;
+}
+.custom-modal .ant-modal-header{
+  background-color: #00256B;
+  border-radius: 0;
+  padding: 11px 24px;
+}
+.custom-modal .ant-modal-title{
+  color: white;
+}
+.custom-modal .ant-modal-close{
+  color: white;
+}
+.custom-modal .ant-modal-close-x{
+  height: 45px;
+  width: 45px;
+  line-height: 45px;
+}
+.custom-modal .ant-modal-footer{
+  padding: 0;
+}
+.custom-modal .ant-form-item-label{
+  line-height: 20px;
+}
+/* .custom-modal .ant-form-item{
+  margin-bottom: 10px;
+} */
+.custom-modal .docany-input{
+  min-height: 40px;
+  border-radius: 0;
+  width: 100%;
+}
+.custom-modal .docany-input .ant-select-selection--single{
+  min-height: 40px;
+  border-radius: 0;
+  width: 100%;
+}
+.custom-modal .docany-input .ant-select-selection--multiple{
+  min-height: 40px;
+  border-radius: 0;
+  width: 100%;
+}
+.custom-modal .docany-input .ant-select-selection__rendered{
+  line-height: 40px;
+}
+.custom-modal .docany-input .ant-calendar-picker-input{
+  height: 40px;
+  border-radius: 0;
+  width: 100%;
+}
+.custom-modal .modal-submit-button{
+    box-sizing: border-box;
+    height: 36px;
+    min-width: 150px;
+    border: 1px solid #00256B;
+    border-radius: 2px;
+    background-color: #00256B;
+    box-shadow: 0 2px 7px 3px rgba(0,0,0,0.17);
+    cursor: pointer;
+}
+.docany-submit-button-small{
+  box-sizing: border-box;
+  height: 36px;
+  min-width: 100px;
+  border: 1px solid #00256B;
+  border-radius: 2px;
+  background-color: #00256B;
+  box-shadow: 0 2px 7px 3px rgba(0,0,0,0.17);
+  color: white;
+  cursor: pointer;
+}
+.docany-submit-button-small:hover{
+  border-color: #40a9ff;
+  background-color: #40a9ff;
+}
+.docany-submit-button-normal{
+  box-sizing: border-box;
+  height: 36px;
+  min-width: 150px;
+  border: 1px solid #00256B;
+  border-radius: 2px;
+  background-color: #00256B;
+  box-shadow: 0 2px 7px 3px rgba(0,0,0,0.17);
+  color: white;
+}
+.docany-submit-button-normal:hover{
+  border-color: #40a9ff;
+  background-color: #40a9ff;
+}
+
+.custom-modal .ant-calendar-picker .ant-calendar-picker-clear{
+  display: none;
+}
+
+.suggestions {
+  color: red
+}
+
+.suggestions-input{
+  color: black
+}
+.suggestions-container {
+background-color: honeydew 
+}
