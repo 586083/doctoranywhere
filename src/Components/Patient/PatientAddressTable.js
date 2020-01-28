@@ -156,24 +156,26 @@ class PatientAddressTable extends Component {
     handleCreatePA = e => {
       e.preventDefault();
       this.props.form.validateFields((err, fieldsValue) => {
-        fieldsValue['patientId']=this.props.paitentDetails.patientId;
-        this.props.createPatientAddress(fieldsValue);
+        if(!err){  
+          fieldsValue['patientId']=this.props.paitentDetails.patientId;
+          this.props.createPatientAddress(fieldsValue);
+        }
       });
     }
     handleEditPA = e => {
       e.preventDefault();
       this.props.form.validateFields((err, fieldsValue) => {
-        fieldsValue['patientId']=this.props.paitentDetails.patientId;
-        fieldsValue['patientAddressId']=this.state.selectedRecord.patientAddressId;
-        this.props.editPatientAddress(fieldsValue);
+        if(!err){  
+          fieldsValue['patientId']=this.props.paitentDetails.patientId;
+          fieldsValue['patientAddressId']=this.state.selectedRecord.patientAddressId;
+          this.props.editPatientAddress(fieldsValue);
+        }
       });
     }
     componentWillMount(){
       this.props.fetchMultiplePatientAddress(this.props.paitentDetails);
     }
     componentWillReceiveProps(nextProps){
-      console.log(nextProps.error,this.props.error,(nextProps.error !== "" && nextProps.error !== undefined));
-      console.log(nextProps.success,this.props.success,(nextProps.success !== "" && nextProps.success !== undefined));
       if(nextProps.error !== "" && nextProps.error !== undefined && nextProps.isPatientAddress){
         openNotification(this.closeAlert,nextProps.error,"error")
         this.setState({
@@ -192,8 +194,6 @@ class PatientAddressTable extends Component {
           searchClicked:false
         })
       }
-      console.log(nextProps.isPatient,this.props.isPatient,nextProps.isPatientAddress,this.props.isPatientAddress)
-      console.log(nextProps.reloadStatus)
       if(nextProps.reloadStatus){
         this.props.fetchMultiplePatientAddress(this.props.paitentDetails);
       }

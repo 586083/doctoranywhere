@@ -12,7 +12,7 @@ class home extends Component {
             config.headers = { Authorization : token }
             return config;
          }, (error) => {
-            console.log(error)
+             console.log(error)
              return Promise.reject(error);
          });
 

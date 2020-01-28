@@ -15,17 +15,19 @@ const providers = {
   googleProvider: new firebase.auth.GoogleAuthProvider(),
 };
 
+
 class App extends Component {
+   
+  
 
    render() {
 
         const {user,signInWithGoogle,signOut} = this.props;
-        console.log(user)
-        
+        console.log(this.props)
         return (
             <div className="App">
                     <header className="App-header">
-                    { (user == undefined || user == null) ? <Login signInApp={signInWithGoogle}></Login> : <Home userObj={user} signOutApp={signOut}></Home>}
+                    { (user == undefined || user == null) ? <Login signInEmail={this.signInWithEmailAndPassword} signInApp={signInWithGoogle}></Login> : <Home userObj={user} signOutApp={signOut}></Home>}
                     </header>
                 </div>
         );

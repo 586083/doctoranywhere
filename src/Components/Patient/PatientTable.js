@@ -141,14 +141,18 @@ class PatientTable extends Component {
     handleCreatePatient = e => {
       e.preventDefault();
       this.props.form.validateFields((err, fieldsValue) => {
-        this.props.createPatient(fieldsValue);
+        if(!err){  
+          this.props.createPatient(fieldsValue);
+        }
       });
     }
     handleEditPatient =  e => {
       e.preventDefault();
       this.props.form.validateFields((err, fieldsValue) => {
-        fieldsValue['patientId']=this.state.selectEditRecord.patientId;
-        this.props.editPatient(fieldsValue);
+        if(!err){  
+          fieldsValue['patientId']=this.state.selectEditRecord.patientId;
+          this.props.editPatient(fieldsValue);
+        }
       });
     }
     backToPatientFunc = () => {
@@ -157,8 +161,6 @@ class PatientTable extends Component {
       })
     }
     componentWillReceiveProps(nextProps){
-      console.log(nextProps.error,this.props.error,(nextProps.error !== "" && nextProps.error !== undefined));
-      console.log(nextProps.success,this.props.success,(nextProps.success !== "" && nextProps.success !== undefined));
       if(nextProps.error !== "" && nextProps.error !== undefined && nextProps.isPatient){
         openNotification(this.closeAlert,nextProps.error,"error")
         this.setState({
@@ -177,8 +179,6 @@ class PatientTable extends Component {
           searchClicked:false
         })
       }
-      console.log(nextProps.isPatient,this.props.isPatient,nextProps.isPatientAddress,this.props.isPatientAddress)
-      console.log(nextProps.reloadStatus)
       if(nextProps.reloadStatus){
         this.props.fetchAllPatient();
       }

@@ -9,7 +9,6 @@ class PatientContainer extends Component {
     }
     render() {
         const allPatient=this.props.patientDetails;
-        console.log(this.props);
         return (
             <div>
                 <PatientTable patientDataSource={allPatient}></PatientTable>
